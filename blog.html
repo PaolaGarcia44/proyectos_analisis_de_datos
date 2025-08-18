@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Analítico - Análisis de Datos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #60a5fa;
+            --secondary: #34d399;
+            --bg-primary: #18181b;
+            --bg-secondary: #23232a;
+            --text-primary: #f3f4f6;
+            --border-color: #52525b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .bg-custom-white {
+            background-color: var(--bg-primary);
+        }
+
+        .bg-custom-light {
+            background-color: var(--bg-secondary);
+        }
+
+        .text-custom-primary {
+            color: var(--text-primary);
+        }
+
+        .border-custom {
+            border-color: var(--border-color);
+        }
+
+        .post-card {
+            transition: all 0.3s ease;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-img-container {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .post-card:hover .project-img {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+        }
+
+        .btn-outline {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            border-width: 1px;
+        }
+
+        .tag {
+            transition: all 0.2s ease;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+        }
+
+        .chart-container {
+            height: 300px;
+            width: 100%;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--border-color) 100%);
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased bg-custom-white">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 bg-custom-white shadow-sm z-50 border-b border-custom">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-custom-primary">Analista de<span class="text-green-300"> Datos</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-custom-primary hover:text-pink-400 transition">Inicio</a>
+                    <a href="#blog" class="text-custom-primary hover:text-pink-400 transition">Análisis</a>
+                    <a href="#proyectos" class="text-custom-primary hover:text-pink-400 transition">Proyectos</a>
+                    <a href="#recursos" class="text-custom-primary hover:text-pink-400 transition">Recursos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="bg-gradient-to-r from-gray-900 to-gray-800 py-20 md:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center justify-between gap-12">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                        Transformando datos en <span class="gradient-text">conocimiento</span> valioso
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                        Análisis profundos, visualizaciones claras y decisiones basadas en datos.
+                        Explora mis trabajos y descubre insights ocultos.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#blog" class="btn-primary bg-green-600 hover:bg-green-700 text-white transition transform hover:-translate-y-0.5">
+                            Ver análisis
+                        </a>
+                        <a href="#metodologia" class="btn-outline border-green-500 text-green-400 hover:bg-gray-800 transition">
+                            Mi metodología
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+        <div class="chart-container">
+            <img src="C:\Users\Usuario\Downloads\pngegg.png" alt="Ejemplo de visualización de datos" class="w-full h-auto rounded-lg">
+        </div>
+        <div class="mt-4 text-center text-sm text-gray-400">
+            
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog/Posts Section -->
+    <section id="blog" class="py-16 bg-custom-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-custom-primary mb-3">Análisis <span class="gradient-text">Recientes</span></h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Publicaciones detalladas de proyectos de análisis con técnicas y visualizaciones
+                </p>
+            </div>
+
+            <!-- Filter Tags -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+                <span class="tag bg-blue-900 text-blue-100 hover:bg-blue-800">Todos</span>
+                <span class="tag bg-green-900 text-green-100 hover:bg-green-800">Python</span>
+                <span class="tag bg-purple-900 text-purple-100 hover:bg-purple-800">SQL</span>
+                <span class="tag bg-yellow-900 text-yellow-100 hover:bg-yellow-800">Tableau</span>
+                <span class="tag bg-red-900 text-red-100 hover:bg-red-800">ML</span>
+                <span class="tag bg-indigo-900 text-indigo-100 hover:bg-indigo-800">Big Data</span>
+            </div>
+
+            <!-- Posts Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Post 1 -->
+                <article class="post-card rounded-lg overflow-hidden">
+                    <a href="#">
+                        <div class="project-img-container">
+                            <img src="https://placehold.co/800x600/1f2937/f3f4f6?text=Análisis+Correlación" 
+                                 alt="Visualización de calor de correlación entre variables económicas" 
+                                 class="project-img">
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center space-x-2 text-sm text-gray-400 mb-3">
+                                <span>15 Mayo 2023</span>
+                                <span>•</span>
+                                <span>12 min lectura</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-custom-primary mb-3">Análisis de correlación económica</h3>
+                            <p class="text-gray-400 mb-4">Relación entre indicadores globales usando Python y Pandas.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tag bg-blue-900 text-blue-100">Pandas</span>
+                                <span class="tag bg-green-900 text-green-100">Seaborn</span>
+                                <span class="tag bg-purple-900 text-purple-100">Análisis</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post-card rounded-lg overflow-hidden">
+                    <a href="#">
+                        <div class="project-img-container">
+                            <img src="https://placehold.co/800x600/1f2937/f3f4f6?text=Tendencias+Retail" 
+                                 alt="Gráfico de series temporales de ventas" 
+                                 class="project-img">
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center space-x-2 text-sm text-gray-400 mb-3">
+                                <span>2 Abril 2023</span>
+                                <span>•</span>
+                                <span>8 min lectura</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-custom-primary mb-3">Tendencias de consumo retail</h3>
+                            <p class="text-gray-400 mb-4">Patrones de compra con SQL y Tableau.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tag bg-blue-900 text-blue-100">SQL</span>
+                                <span class="tag bg-yellow-900 text-yellow-100">Tableau</span>
+                                <span class="tag bg-purple-900 text-purple-100">Series Temporales</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post-card rounded-lg overflow-hidden">
+                    <a href="#">
+                        <div class="project-img-container">
+                            <img src="https://placehold.co/800x600/1f2937/f3f4f6?text=Modelo+Predictivo" 
+                                 alt="Matriz de confusión de modelo predictivo" 
+                                 class="project-img">
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-center space-x-2 text-sm text-gray-400 mb-3">
+                                <span>20 Marzo 2023</span>
+                                <span>•</span>
+                                <span>15 min lectura</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-custom-primary mb-3">Modelo predictivo crediticio</h3>
+                            <p class="text-gray-400 mb-4">Algoritmo de ML con 92% de precisión.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tag bg-red-900 text-red-100">Machine Learning</span>
+                                <span class="tag bg-blue-900 text-blue-100">Python</span>
+                                <span class="tag bg-pink-900 text-pink-100">Scikit-learn</span>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section id="proyectos" class="py-16 bg-custom-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-custom-primary mb-3">Proyectos <span class="gradient-text">Destacados</span></h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Implementaciones completas con análisis de datos para resolver problemas reales
+                </p>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="mb-16">
+                <div class="md:flex items-center gap-10 mb-10">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h3 class="text-2xl font-bold text-custom-primary mb-3">Dashboard de Business Intelligence</h3>
+                        <p class="text-gray-400 mb-5">
+                            Panel interactivo para monitorización de KPIs con integración de múltiples fuentes
+                            de datos en tiempo real usando Power BI y Python.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="tag bg-blue-900 text-blue-100">Power BI</span>
+                            <span class="tag bg-green-900 text-green-100">Python</span>
+                            <span class="tag bg-purple-900 text-purple-100">SQL Server</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-green-600 font-medium hover:text-blue-300 transition">
+                            Ver caso completo
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-gray-800 p-5 rounded-lg">
+                            <div class="chart-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="mb-16">
+                <div class="md:flex items-center gap-10 flex-row-reverse">
+                    <div class="md:w-1/2 mb-8 md:mb-0">
+                        <h3 class="text-2xl font-bold text-custom-primary mb-3">Sistema de Recomendación</h3>
+                        <p class="text-gray-400 mb-5">
+                            Algoritmo de filtrado colaborativo para e-learning que incrementó
+                            la retención en un 28%. Implementado con PySpark para datasets masivos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="tag bg-red-900 text-red-100">Machine Learning</span>
+                            <span class="tag bg-blue-900 text-blue-100">PySpark</span>
+                            <span class="tag bg-green-900 text-green-100">AWS</span>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-green-600 font-medium hover:text-blue-300 transition">
+                            Detalles técnicos
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <div class="bg-gray-800 p-5 rounded-lg">
+                            <div class="chart-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                        </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section id="recursos" class="py-16 bg-custom-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-custom-primary mb-3">Recursos <span class="gradient-text">Útiles</span></h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Herramientas y materiales para la comunidad de análisis de datos
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Resource 1 -->
+                <div class="post-card rounded-lg overflow-hidden">
+                    <div class="h-48 bg-blue-900 flex items-center justify-center">
+                        <svg class="h-16 w-16 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-custom-primary mb-2">Plantilla ETL en Python</h3>
+                        <p class="text-gray-400 mb-4">Flujo automatizado para ETL con Pandas y SQLAlchemy.</p>
+                        <a href="#" class="inline-flex items-center text-green-600 text-sm font-medium">
+                            Descargar
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource 2 -->
+                <div class="post-card rounded-lg overflow-hidden">
+                    <div class="h-48 bg-green-900 flex items-center justify-center">
+                        <svg class="h-16 w-16 text-green-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-custom-primary mb-2">Guía de Visualización</h3>
+                        <p class="text-gray-400 mb-4">Cómo elegir el gráfico adecuado para tus datos.</p>
+                        <a href="#" class="inline-flex items-center text-green-600 text-sm font-medium">
+                            Ver guía
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Resource 3 -->
+                <div class="post-card rounded-lg overflow-hidden">
+                    <div class="h-48 bg-purple-900 flex items-center justify-center">
+                        <svg class="h-16 w-16 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-custom-primary mb-2">Cheat Sheet SQL</h3>
+                        <p class="text-gray-400 mb-4">Comandos esenciales y optimizaciones para SQL.</p>
+                        <a href="#" class="inline-flex items-center text-green-600 text-sm font-medium">
+                            Descargar
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Methodology -->
+    <section id="metodologia" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Mi <span class="gradient-text">Metodología</span></h2>
+                <p class="text-xl text-gray-500 max-w-3xl mx-auto">
+                    Un enfoque estructurado para garantizar resultados precisos y accionables
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white-900 mb-2">Definición del Problema</h3>
+                    <p class="text-gray-500">
+                        Identificar claramente los objetivos y preguntas que los datos deben responder.
+                    </p>
+                </div>
+               <!-- Step 2 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-green-600">2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white-900 mb-2">Recolección de Datos</h3>
+                    <p class="text-gray-500">
+                        Acceso a fuentes confiables y limpieza inicial para garantizar calidad.
+                    </p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-gray-800  p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white-900 mb-2">Análisis Exploratorio</h3>
+                    <p class="text-gray-500">
+                        Identificación de patrones, anomalías y relaciones mediante estadística y visualización.
+                    </p>
+                </div>
+                 <!-- Step 4 -->
+                <div class="bg-gray-800  p-6 rounded-xl shadow-sm hover:shadow-md transition text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-yellow-600">4</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white-900 mb-2">Comunicación</h3>
+                    <p class="text-gray-500">
+                        Presentación clara de hallazgos e insights para la toma de decisiones.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold text-green-300">Analista de Datos</span>
+                    <p class="text-white-400 mt-1">© 2025 Todos los derechos reservados</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/PaolaGarcia44/proyectos_analisis_de_datos.git" class="text-gray-400 hover:text-indigo-500 transition">GitHub</a>
+                    <a href="https://www.linkedin.com/in/paola-andrea-garcia-tangarife-338627186" class="text-gray-400 hover:text-indigo-500 transition">LinkedIn</a>
+                    <a href="https://wa.me/qr/NZEEMQQRJG3WB1" class="text-gray-400 hover:text-indigo-500 transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
