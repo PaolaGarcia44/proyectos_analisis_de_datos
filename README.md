@@ -1,14 +1,22 @@
 # Proyectos de Análisis de Datos
 
-Este repositorio está orientado a mostrar mis conocimientos y experiencia en **análisis de datos**, aplicados a proyectos prácticos y de portafolio personal.  
-Aquí encontrarás desde ejercicios básicos hasta proyectos más completos, en los que utilizo diversas herramientas y metodologías de análisis, limpieza, visualización y modelado de datos.  
+Este repositorio contiene proyectos prácticos en los que aplico mis conocimientos en **análisis de datos** y **automatización de procesos**.  
 
-El contenido se centra en:
+En este caso, el notebook `pruebas.ipynb` se centra en:  
 
-- **Limpieza y transformación de datos**: preparación de datasets eliminando inconsistencias, valores nulos y estandarizando información.  
-- **Exploración y análisis**: uso de estadísticas descriptivas, segmentación y análisis exploratorio para extraer patrones y tendencias.  
-- **Visualización de datos**: creación de gráficos y dashboards que facilitan la interpretación de resultados.  
-- **Machine Learning inicial**: implementación de modelos predictivos y de clasificación en proyectos aplicados.  
-- **Buenas prácticas en ciencia de datos**: documentación clara, notebooks reproducibles y organización de código.  
+- **Extracción de datos desde páginas web** usando **Selenium** y **webdriver_manager** para controlar el navegador.  
+- **Automatización de procesos** con control de tiempos y condiciones de carga mediante `time` y las herramientas de espera explícita de Selenium.  
+- **Almacenamiento y manipulación de datos** en estructuras tabulares con **pandas**.  
+- **Gestión de archivos** y rutas mediante la librería estándar **os**.  
 
-Este repositorio también forma parte de mi **portafolio profesional**, donde integro proyectos académicos y personales que reflejan mi interés y desarrollo en el campo de **Data Science e Inteligencia Artificial**.  
+## Librerías utilizadas
+
+- `pandas` → análisis y manipulación de datos.  
+- `selenium` → automatización de navegadores web.  
+- `webdriver_manager` → manejo automático de drivers de navegador.  
+- `os` → manejo de rutas y archivos en el sistema operativo.  
+- `time` → gestión de tiempos de espera.  
+
+---
+
+Este proyecto hace parte de mi **portafolio de análisis de datos**, en el cual integro **extracción, procesamiento y organización de información** para resolver problemas prácticos y demostrar el uso de herramientas modernas en ciencia de datos.
