@@ -1,12 +1,20 @@
 📊 Proyecto Final – Análisis y Procesamiento de Datos
 
+
+
 Este repositorio contiene el archivo proyecto_final.ipynb, el cual desarrolla un proceso completo de análisis y transformación de datos orientado a la obtención de información confiable, estructurada y útil para la toma de decisiones.
 
 El proyecto evidencia un enfoque riguroso en la gestión y comprensión de datos, siguiendo estándares utilizados en entornos profesionales.
 
+
+
 🧩 Objetivo General
 
 Realizar un análisis integral del dataset asignado, aplicando técnicas de limpieza, depuración, estructuración y evaluación analítica, con el fin de identificar comportamientos, patrones y conclusiones relevantes para un contexto operativo o estratégico.
+
+
+
+
 
 🛠 Alcance del Proyecto
 
@@ -54,6 +62,9 @@ Relación entre variables y posibles implicaciones del análisis
 Conclusiones finales
 El documento presenta conclusiones fundamentadas en evidencia, orientadas a respaldar decisiones y aportar claridad sobre el comportamiento de los datos analizados.
 
+
+
+
 🎯 Valor del Proyecto
 
 El análisis demuestra:
@@ -65,6 +76,9 @@ Capacidad para estructurar información compleja
 Pensamiento analítico y enfoque basado en evidencia
 
 Aplicación de buenas prácticas en entornos de análisis profesional
+
+
+
 
 🛠 Tecnologías empleadas
 
