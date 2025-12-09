@@ -838,9 +838,6 @@ def main():
             <h1 style="color: #00d4ff; font-size: 2.8rem; margin-bottom: 10px;">
                 🌍 DASHBOARD DE DELITOS AMBIENTALES
             </h1>
-            <p style="color: #b0b0b0; font-size: 1.2rem;">
-                Análisis Exploratorio de Tendencias y Focos Críticos
-            </p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -860,10 +857,6 @@ def main():
             archivo_path_default = "BD_Delitos_ambientales.csv"
             data_input = uploaded_file if uploaded_file is not None else archivo_path_default
             
-        with col_config2:
-            # Configuración del Tema
-            st.markdown("**🎨 Configuración de Visualización**")
-            st.caption("Tema optimizado para fondo oscuro")
         
         st.subheader("🔍 Estado de Procesamiento")
 
