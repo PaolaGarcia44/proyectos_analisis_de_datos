@@ -98,6 +98,4 @@ Consideraciones éticas y de calidad de datos
 - Usar escalas logarítmicas y anotaciones claras cuando las cifras varíen ampliamente para evitar interpretaciones erróneas.
 
 
-Licencia
---------
-Indicar la licencia (por ejemplo, MIT) si se desea permitir la reutilización abierta del análisis.
+
