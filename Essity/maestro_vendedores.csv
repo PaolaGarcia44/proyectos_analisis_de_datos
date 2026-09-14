@@ -1,0 +1,33 @@
+codigo_vendedor,nombre_vendedor,fecha_ingreso,categoria,comision_pct,email,activo
+V001,Juan Pérez,2024-07-01,Junior,1.98,juan.perez@empresa.com,True
+V002,María García,2024-07-01,Junior,1.72,maria.garcia@empresa.com,True
+V003,Carlos López,2022-04-01,Junior,2.14,carlos.lopez@empresa.com,True
+V004,Ana Martínez,2018-02-01,Senior,3.14,ana.martinez@empresa.com,True
+V005,Pedro Rodríguez,2022-10-01,Junior,1.64,pedro.rodriguez@empresa.com,True
+V006,Laura Sánchez,2018-10-01,Senior,3.45,laura.sanchez@empresa.com,False
+V007,Diego Hernández,2020-10-01,Semi-Senior,2.27,diego.hernandez@empresa.com,True
+V008,Sofía Torres,2024-12-01,Junior,1.82,sofia.torres@empresa.com,True
+V009,Andrés Ramírez,2019-05-01,Senior,4.3,andres.ramirez@empresa.com,True
+V010,Camila Flores,2018-12-01,Senior,4.65,camila.flores@empresa.com,True
+V011,Roberto Díaz,2023-12-01,Junior,2.01,roberto.diaz@empresa.com,True
+V012,Valentina Moreno,2019-07-01,Senior,4.6,valentina.moreno@empresa.com,True
+V013,Felipe Vargas,2021-11-01,Semi-Senior,2.67,felipe.vargas@empresa.com,True
+V014,Isabella Castro,2020-03-01,Semi-Senior,3.04,isabella.castro@empresa.com,True
+V015,Sebastián Ortiz,2022-05-01,Junior,1.62,sebastian.ortiz@empresa.com,True
+V016,Daniela Ruiz,2023-05-01,Junior,2.29,daniela.ruiz@empresa.com,True
+V017,Mateo Jiménez,2023-02-01,Junior,2.28,mateo.jimenez@empresa.com,False
+V018,Luciana Morales,2018-04-01,Senior,3.57,luciana.morales@empresa.com,True
+V019,Nicolás Romero,2020-06-01,Semi-Senior,3.48,nicolas.romero@empresa.com,True
+V020,Mariana Navarro,2024-05-01,Junior,2.02,mariana.navarro@empresa.com,True
+V021,Alejandro Medina,2021-12-01,Semi-Senior,2.91,alejandro.medina@empresa.com,True
+V022,Gabriela Herrera,2019-01-01,Senior,3.59,gabriela.herrera@empresa.com,True
+V023,Tomás Aguilar,2024-10-01,Junior,2.36,tomas.aguilar@empresa.com,True
+V024,Paula Vega,2021-02-01,Semi-Senior,2.88,paula.vega@empresa.com,True
+V025,Emilio Campos,2019-06-01,Senior,3.05,emilio.campos@empresa.com,True
+V026,Carolina Reyes,2024-12-01,Junior,1.82,carolina.reyes@empresa.com,True
+V027,Manuel Guerrero,2024-12-01,Junior,2.06,manuel.guerrero@empresa.com,True
+V028,Natalia Mendoza,2022-12-01,Junior,2.17,natalia.mendoza@empresa.com,True
+V029,Fernando Cruz,2020-12-01,Semi-Senior,2.5,fernando.cruz@empresa.com,True
+V030,Catalina Ramos,2019-02-01,Senior,4.73,catalina.ramos@empresa.com,True
+V098,Vendedor Nuevo 1,2025-11-01,Junior,1.5,vendedor.nuevo1@empresa.com,True
+V099,Vendedor Nuevo 2,2025-12-01,Junior,1.5,vendedor.nuevo2@empresa.com,True
